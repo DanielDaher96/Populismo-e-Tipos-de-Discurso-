@@ -1,0 +1,525 @@
+---
+title: "Trabalho Final - Populismo e tipos de discursos"
+author: "Daniel Daher"
+date: "15/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+ <div style="text-align: justify">
+
+## R Markdown
+
+• Qual é a questão da pesquisa?
+
+	A presente pesquisa parte da seguinte pergunta norteadora: o tipo de discurso proferido pelo líder de um país  influencia na nota de populismo do discurso? 
+	
+– Por que a pesquisa é interessante?
+
+	A pesquisa é interessante uma vez que apresenta uma variável dependente Y, qual seja a nota de populismo do discurso, explicada pelo tipo de discurso proferido pelo líder do país. A literatura científica sobre populismo, nas ciências sociais, se concentra primordialmente na análise do discurso durante a campanha eleitoral do populista e nos atos promovidos pelo populista depois de instalado no cargo de chefe do gabinete. Desse modo a pesquisa propõe um foco apenas no discurso, tanto daquele que levou a vitória eleitoral como daqueles proferidos enquanto líder do país. 
+	Assim, temos um novo X, qual seja o tipo de discurso, explicando a nota de populismo no discurso.
+	
+– Por que a pesquisa é importante?
+	
+	Após crise financeira que explodiu no fim de 2008 nos Estados Unidos, o populismo voltou ao foco (BERMAN, 2020). O movimento Tea Party nos EUA apresentou um grande crescimento a partir de 2010, e no mesmo ano Viktor Órban tornou-se primeiro ministro da Hungria onde vem promovendo, com o seu partido, o FIDESZ, sua famosa “democracia iliberal”; o Lei e Justiça assumiu o poder na Polônia, Donald Trump foi eleito presidente nos EUA e Jair Bolsonaro no Brasil (MUDDE e KALTWASSER, 2017; MÜLLER, 2017; GURIEV e PAPAIONNOU, 2020). O número de citações da palavra “populismo” no Google Searches e News aumentou mais que o dobro entre 2010 e 2020. Portanto, o populismo é um fenômeno importante para ser estudado no momento. 
+	Cas Mudde e Kaltwasser (2017) e Müller (2017) trazem em suas obras a existência do questionamento acerca da possibilidade do populista continuar se comportando como tal após ser eleito, pois caso não mudem de comportamento jamais conseguirão fazer política. Os autores trazem diversos exemplos para escancarar que sim é possível populistas no poder promoverem sua agenda, como foi o caso da nova constituição da Venezuela promovida por  Hugo Chávez; ou a alteração na composição da Suprema Corte da Polônia, promovida pelo Lei e Justiça, que aposentou juízes mais cedo para substituí-los por apoiadores do partido. 
+	Entretanto, mesmo no poder  e conseguindo implementar suas políticas desejadas, o discurso do populista muda muito em relação àquele utilizado durante a campanha?  Ao tomar suas atitudes já como incumbente, o líder continua com um teor alto de populismo ou este sofre uma baixa? São por tais motivos que a pesquisa é importante, pois busca verificar em quais momentos os a retórica populista é predominante. 
+
+• Qual é a teoria?
+
+  O conceito de populismo está em constante disputa. Para teórico político argentino, Ernesto Laclau (2007), o populismo é um fenômeno necessário e bom, pois reaproxima da política uma parcela da populaçao excluída, abandonada. Para Chantal Mouffe (2020) o populismo de direita pode trazer políticas destrutivas à socidade, de modo que a melhor forma de dar uma resposta é o nascimento do populismo de esquerda. 
+  Para este trabalho serão adotadas duas definições complementares de populismo. A primeira é dada por Mudde e Kaltwasser (2017), onde para os autores o populismo é uma ideologia fina que considera a sociedade divida em dois grupos antagônicos e homogênos: o povo puro contra a eleite corrupta, além de defender que a política deve ser uma expressão da vontade geral. 
+  Müller (2017) percebe o populismo como uma visão moralista da política, "um meio de perceber o mundo político  divido entre o povo moralmente puro e a elite corrupta, moralmente inferiro" (p.20). Para o autor, populista são, então, anti-pluralistas: eles, somente, representam o povo puro; todos os outros políticos trabalham para a elite corrupta  e imoral.
+  Tais definições se dão em razão tanto de discursos como de atitudes,que tornam o líder um verdadeiro populista. Um exemplo de discurso populista é fala de Viktor Órban, em 2010:
+             
+                No policy-specific debates are needed now, the alternatives
+                in front of us are obvious [ . . . ] I am sure you have
+                seen what happens when a tree falls over a road and
+                many people gather around it. Here you always have
+                two kinds of people. Those who have great ideas how to
+                remove the tree, and share with others their wonderful
+                theories, and give advice. Others simply realize that the
+                best is to start pulling the tree from the road. . . . [W]e
+                need to understand that for rebuilding the economy it
+                is not theories that are needed but rather thirty robust
+                lads who start working to implement what we all know
+                needs to be done.
+
+  O primeiro ministro húngaro estava afirmando que não tinha intenção comparecer a debates eleitorais com seus adversário, pois ele sabia a real vontade do povo  da Hungria, fazendo com quer qualquer debate fosse desnecessário.
+  Na Polônia identificamos atitudes populista quando o Lei e Justiça mudou o limite de idade para os juízes da Suprema  COrte, aposentando juízes contráridos às mudanças institucionais promovidas pelo partido e os substituindo por juízes apoiadores do partido, tornando o caminho livre para que o Lei e Justiça pudesse governar sem barreiras. E, isso tudo foi feito sob o pretexto de realaizar a real vontade do povo polonês.
+  Portanto, discursos e atitudes fazem com que o político seja mais populista, ou menos populista. O foco do presente trabalho será nos discursos. Discursos populistas aumentam o populismo de um líder. 
+
+• Elaborar uma explicação causal teórica
+
+  Enquanto não estão instalados à frente do Poder Executivo, políticos populistas tendem a constantemente atacar a elite política, prometem construir uma nação com base na vontade geral do povo verdadeiro do país (o conceito de povo está em constante disputa), dividindo a sociedade entre o povo puro e a elite corrupta  (MUDDE e KALTWASSER, 2017) ao mesmo tempo em que clamam que apenas eles representam o povo. Todavia, depois de terem assumido o gabinete é justo pensar que tais políticos irão usar de discursos menos populistas uma vez que precisarão de parte da elite política que tanto criticaram, caso contrário, podem ter dificuldades para governar. Além disso, alguns discursos, como os proferidos em eventos internacionais, caso venham a possuir um grande teor de populismo podem abalar a imagem do líder e, consequentemente, do país. Portanto, é razoável pensar que discursos feitos em campanha serão mais populistas que os demais.
+  
+  1. Qual é a variável dependente?
+	A variável dependente é a nota do discurso populista (ou, como será usada na regressão, NotaDiscurso).
+
+  2. Qual é a variável independente?
+	A variável independente principal é o tipo de discurso (ou, como será usada na regressão, TipoDiscurso).
+
+  3. Qual é a teoria causal que conecta a variável independente a variável dependente?
+	O tipo de discurso influencia na nota de populismo de um discurso pronunciado pelo líder.
+
+  4. Por que é importante utilizar as outras variáveis independentes para avaliar essa causalidade e relação entre variáveis?
+	Porque o resultado da variável dependente pode ter outra causas, como o sistema de governo, a região onde o país encontra-se situado e a ideologia do líder. Portanto, é preciso controlar os efeitos que tais variáveis terão na variável dependente. 
+
+                                        
+• Operacionalização dos conceitos teóricos em variáveis empíricas	
+
+	Para a operacionalização dos conceitos teóricos em variáveis empíricas precisamos conferir a confiabilidade e a validade dos dados a serem utilizados na pesquisa. A confiabilidade diz respeito a capacidade de reprodução dos dados de forma consistente, ou seja, através da aplicação das mesmas regras de mensuração para as mesmas observações e para observadores diferentes, os resultados gerados sejam iguais. Portanto, para as variáveis do presente trabalho, pode-se afirmar que elas gozam de confiabilidade, pois não se alteram dentro do período analisado (1930 – 2019). Todavia, é importante frisar que o banco usado no trabalho (Global Populism Database: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/LFTQEZ) está sujeito a atualizações no site em que se encontra (Harvard Data Verse) na medida em que novos dados forem coletados. Deste modo, líderes como Barack Obama ou Lula, que já acabaram seus mandatos, não terão seus dados modificados uma vez que o foco é o período de campanha eleitoral e o mandato; já líderes como Jair Bolsonaro, o banco traz apenas dados de sua campanha em 2018 e de seu primeiro ano como presidente, 2019, de modo que caso outro pesquisador decida replicar a pesquisa, poderá encontrar resultados diferentes uma vez que novos dados devem ser encorpados em breve ao banco. Logo, é importante que os pesquisadores estejam atentos ao recorte temporal que o banco se propõe a cobrir a cada atualização. 
+	A validade da variável diz respeito à mensuração acurada da medida que o pesquisador se propõe a medir. A variável dependente que irei utilizar na minha pesquisa é a nota de populismo nos discursos dos líderes dos 66 países analisados. Tal nota é medida dentro de uma escala contínua de 0 a 2, com escalas decimais sendo, também utilizadas (ex: 0.1, 0.3, etc) nas quais 0 consiste  em um discurso com pouquíssimos ou nenhum elemento populista; 1 significa um discurso com alguns elementos populistas (como romantização do povo e caracterização de uma elite corrupta) ao mesmo tempo em esses elementos não são usados  consistentemente ou são balanceados com elementos não populistas; e, 2 quer dizer que o discurso é extremamente populista e traz consigo quase todos os elementos considerados ideias para um discurso populista, com poucas características não populistas. Importante salientar que a partir de 0.5 se arredonda para 1 e a partir de 1.5 se arredonda para 2. 
+	No que tange a validade de constructo esta diz respeito ao grau em que a variável dependente está relacionada a outras medidas relacionadas pela literatura da temática. Portanto, a variável dependente, nota de populismo no discurso, está diretamente relacionada a variável independente principal, tipo do discurso, pois há o questionamento a respeito da possibilidade de líderes populistas continuarem populistas uma vez eleitos e integrando o establishment político. Do mesmo modo a variável dependente também está ligada ao fator sistema de governo, pois é comum o pensamento de que em governos parlamentaristas há menor espaço para surgimento de líderes populistas. A outra variável independente que está relacionada a variável dependente é a região do líder, pois historicamente o populismo esteve muito associado à América Latina, de modo que apenas nos últimos anos a literatura passou a tratar de populistas na América do Norte e na Europa. Por fim, a última variável independente que está relacionada à variável dependente trata ideologia do líder, pois, mais uma vez, a literatura tratou o populismo mais como um fenômeno promovido pela esquerda da América Latina (talvez a razão disso seja a associação do tema com o pesquisador argentino Ernesto Laclau). 
+ 	A melhor forma de mensurar a variável dependente (nota de populismo no discurso) é através de uma variável contínua numérica, em uma escala de 0 a 2, com a utilização de valores decimais, pois é possível ter um vislumbre do quão populista cada discurso é. Já variável independente principal, o tipo do discurso, a forma ideal para mensuração é por meio de uma variável categoria não binária, de modo que a dividimos em quatro tipos de discurso: de campanha, famoso, internacional e voltado para apoiadores; isso permite verificar qual categoria de discurso mais contribui para o aumento do populismo nos discursos. A outra variável independente é o sistema de governo, será codificada de forma categórica binária, sendo 1 presidencialismo e 0 não presidencialismo. A variável independente região é codificada de modo categórico não binária, contendo as seguintes regiões do globo: América Latina e Caribe, Europa e Ásia Central, Oriente Médio e Norte da África, América do Norte, Sul da Ásia, África Subsaariana, Leste da Ásia e Pacífico. E, por fim, a variável independente ideologia consiste, também, em uma variável categórica não binária, para qual 0 é Centro, 1 é Direita e -1 representa a Esquerda. 
+
+• ELABORAÇAÕ DE HIPÓTESES
+  
+  A hipótese principal da que a presente pesquisa busca testar é: discursos de campanha são a categoria de discurso que mais influenciam no aumento da nota de populismo no discurso do líder. 
+  Em consequência, a hipótese nula é que discursos de campanha não são os que mais influenciam no aumento da nota do populismo. 
+  Poranto, com essa hipótese principal espera-se encontrar uma relação positiva: a presença de discursos de campanha aumentam a nota de populismo do discurso do líder. 
+  A hipótese secundária: sistemas presidencialistas são mais propícios a líderes com discursos que tenham a nota de discursos populistas mais altas. 
+  A hipótese nula, portanto, é: sistemas presidencialistas não são mais propícios a líderes com discursos que tenham nota mais altas em discursos populistas. 
+  Com isso espera-se encontrar uma relação positiva: a presença do presidencialismo aumenta a nota do discurso populista proferido pelo líder.
+  
+• FAZER UM ESQUEMA SEMELHANTE A FIGURA 1.2 DO LIVRO (PÁGINA 10)
+   
+   Discurso proferido pelo líder ->o teor de um duscurso proferido por um líder o torna mais ou menos populusta (teoria causal) -> Populismo de um determinado líder.
+   
+   Após a operacionalização temos:
+   
+   Tipo de discurso -> Discursos de campanha tendem a aumentar a nota de populismo dos discursos (hipótese) -> Nota do Discurso.
+  
+```{r} 
+library(devtools)
+library(readxl)
+library(tidyverse)
+library(sjPlot)
+
+setwd("C:\\Users\\Daniel Daher\\Documents\\Mestrado UFPE\\Análise de Dados - Rodrigo Martins")
+
+GPD <- read_excel(file.choose())
+
+###
+
+names(GPD)
+summary(GPD)
+
+GPD$speechtype
+GPD$wb_region
+hist(GPD$averagerubric)
+hist(GPD$lr)
+hist(GPD$president)
+
+names(GPD)
+
+###
+
+banco <- GPD %>% distinct(speechnum, leader, .keep_all = TRUE) %>%
+  rename(TipoDiscurso = speechtype,
+         NotaDiscurso = averagerubric,
+         Regiao = wb_region,
+         Ideologia = lr,
+         SistemaGoverno = president)
+
+names(banco)
+
+
+banco_regressao <- lm(NotaDiscurso ~ TipoDiscurso + SistemaGoverno + Regiao + Ideologia, data = banco)
+
+summary(banco_regressao)
+
+library(memisc)
+
+banco$Tipo_Discurso <- banco$TipoDiscurso %>%
+  recode("Campaign" <- c("campaign"),
+         "Famous" <- c("famous", "Famous"),
+         "International" <- c("International", "international"),
+         "Ribboncutting" <- c("ribboncutting", "Ribboncutting", "ribbon cutting"))
+
+
+banco$Ideologia_Cod <- banco$Ideologia %>%
+  recode("Centro" <- c(0),
+         "Direita" <- c(1),
+         "Esquerda" <- c(-1))
+
+banco$SistemaGoverno_Cod <- banco$SistemaGoverno %>%
+  recode("Presidencialismo" <- c(1),
+         "Não Presidencialismo" <- c(0))
+
+banco$Regiao_Cod <- banco$Regiao %>%
+  recode("Latin America & Caribbean" <- c("Latin America & Caribbean"),
+         "Europe & Central Asia" <- c("Europe & Central Asia"),
+         "Middle East & North Africa" <- c("Middle East & North Africa"),
+         "North America" <- c("North America"),
+         "South Asia" <- c("South Asia"),
+         "Sub-Saharan Africa" <- c("Sub-Saharan Africa"),
+         "East Asia & Pacific" <- c("East Asia & Pacific"))
+
+
+
+banco_regressao1 <- lm(NotaDiscurso ~ Tipo_Discurso + SistemaGoverno + Regiao + Ideologia, data = banco)
+
+
+summary(banco_regressao1)
+
+library(texreg)
+
+screenreg(banco_regressao1)
+
+banco_regressao2 <- lm(NotaDiscurso ~ Tipo_Discurso + SistemaGoverno + Regiao_Cod + Ideologia_Cod, data = banco)
+
+summary(banco_regressao2)
+
+screenreg(banco_regressao2)
+
+confint(banco_regressao2)
+
+plot_model(banco_regressao2)
+```
+
+•	DISCRIÇÃO DOS DADOS
+
+- Dimensão temporal e espacial:
+Dimensão temporal dos dados é o intervalo de tempo de 1930 a julho de 2019 e a dimensão espacial são os 66 países aos quais são analisados os discursos dos líderes. 
+
+- Considerações sobre a amostra:
+A amostra consiste em quatro discursos feitos pelos chefes do poder executivo (o líder) de cada país, para cada um de seus mandatos: um discurso de campanha, um discurso para base de aliados (ribbon-cutting), um discurso internacional e um discurso famoso.  
+
+- Que tipo de variáveis você usa?
+
+I.	Nota Discurso (variável dependente): contínua, variando entre 0 e 2;
+
+II.	Tipo de Discurso (variável independente principal): categórica, variando entre discurso de campanha, discurso feito para a base de aliados (ribbon-cutting), discurso internacional e discurso famoso;
+
+III.	Sistema de governo (variável independente): categoria binária, variando entre 1 – presidencialista e 0 – não presidencialista;
+
+IV.	Região (variável independente): categórica, variando entre América Latina e Caribe, Eurpa e Ásia Central, Oriente Médio e Norte da África, América do Norte, Sul da Ásia, África Subsaariana, Leste da Ásia e Pacífico
+
+V.	Ideologia (variável independente): categórica, variando entre 0 – Centro, Esquerda – -1 e Direita – 1.
+
+- Gráficos adequados para descrever cada uma das variáveis
+
+Nota Discurso (variável dependente): contínua /Gráfico de barras 
+  Com este gráfico de barras, é possível observamos que a maioria dos  dados referentes as notas dos discursos dos líderes estão situadas em 0.0, ou seja, a maioria de todos os discursos, referentes às quatro modalidades do modelo, têm nota 0.0, o que quer dizer que maior parte dos discursos possuem teor não populista. Portanto, mesmo que o momento atual seja populista, como escreveu o cientista político Adam przeworski em seu livro Crises da Democracia (2019), em termos de discurso ainda há  uma prevalência de não populistas. 
+```{r}
+library(tidyverse)
+
+ggplot(banco, aes(NotaDiscurso))+
+   geom_bar()
+
+```
+Tipo de Discurso (variável independente principal)/Gráfico de Barras
+  Utilizamos o gráfico abaixo para verificar a quantiade de cada categoria de discurso presente no banco de dados. Conforme é possível observa, as categorias discursos famosos, internacionais e para a base de aliados (Ribboncutting) apresentam a mesma quantidade; a categoria discurso de campanha apresenta um número um pouco menor de amostras, mas não é um diferença tão significativa (pelo gráfico podemos assumir que a diferença entre a quantidade de discursos de campanha e as demais categorias seja de apenas 10, no máximo).
+  Portanto, o banco de dados que essa pesquisa toma como base para trabalhar apresenta o mesmo número de discursos para três categorias e um número um pouco redusido para um categoria. 
+```{r}
+ggplot(banco, aes(Tipo_Discurso))+
+   geom_bar()
+
+```
+
+Sistema de governo (variável independente): categoria binária / Gráfico de Barras
+  O gráfico de barras abaixo representa o sistema de governo. conforme pode ser verificado, a maioria dos discursos tratados na amostra são de líderes de países presidencialistas (quase 500); ao passo que, do outro lado, há um número de aproximadamente 360 discursos proferidos por líderes de países não presidencialistas. 
+```{r}
+ggplot(banco, aes(SistemaGoverno_Cod))+
+   geom_bar()
+
+```
+Região (variável independente): categórica / Gráfico de Barras
+
+  No que diz respeito as regiões, a grande maioria dos discursos do banco de dados utilizado na presente pesquisa são da Europa e Ásia Central,  com a proximadamente 500 discursos. Em seguida vem a região América Latina e Caribe, tal região conta com quase 300 discursos analisados. 
+```{r}
+library(ggthemes)
+
+ggplot(banco, aes(Regiao_Cod))+
+   geom_bar()
+
+
+```
+
+Ideologia (variável independente): categórica/Gráfico de Barras
+
+  Por fim, no que tange à ideologia do líder proferidor do discurso, podemos observar pelo gráfico de barras abaixo que a maioria dos discursos do presente banco são proferidos por líderes de direita, pouco mais de 350. Há aproximadamente 300 discursos profereidos por líderes de esquerda e aproximadamente 200 proferidos por líderes de centro. 
+```{r}
+ggplot(banco, aes(Ideologia_Cod))+
+   geom_bar()
+
+```
+- Graficos e testes adequados para descrever a associacao entre as variaveis
+
+Variável dependente Nota Discurso quando associdada a variável independente Tipo de Discurso
+O Pvalor é 2e-16***, possui significância estatística. Para saber a difernça significamente significante entre os grupos, é necessário fazer o teste Tukey.
+  Conforme é possível observar através do gráfico, discursos internacionais são os que comportam as menores notas de populismo.
+```{r}
+summary(banco$NotaDiscurso)
+summary(banco$Tipo_Discurso)
+
+teste_anova <- aov(NotaDiscurso ~ Tipo_Discurso, data = banco)
+summary(teste_anova)
+
+
+TukeyHSD(teste_anova)
+
+ggplot(banco, aes(NotaDiscurso, fill= Tipo_Discurso))+
+   geom_density(alpha = 0.3)
+
+
+
+```
+
+Variável dependente Nota Discurso quando associdada a variável independente Sistema de Governo.
+Pelo test.t, podemos observar que a média para Presidencialismo é 0.42 e para Não Presidencialimso é 0.26. Portanto, sistemas presidencialistas são mais propícios para líderes com discurso com maior nota de populismo do que sistemas não presidencialistas. 
+O p-valor é 1.559e-05 e por se muito próximo de zero podemos rejeitar a hipótese nula de que a diferença entre as médias é igual a zero. 
+Presidencialismo tende a ter afinidade com populismo em média 0.16 maior que sistemas não presidencialistas. Mas essa média pode variar no intervalor de confiança de 0.08 e 0.23.
+  Pelo gráfico também podemos observar que os sistemas não presidencialistas são os que possuem os discursos com o valor mais baixo na escola de 0.0 a 2 em populismo.
+```{r}
+summary(banco$SistemaGoverno_Cod)
+
+t.test(NotaDiscurso ~ SistemaGoverno_Cod, data = banco)
+
+                                                  
+ggplot(banco, aes(NotaDiscurso, fill= SistemaGoverno_Cod))+
+   geom_density(alpha = 0.5)
+                         
+```
+
+Variável dependente Nota Discurso quando associdada a variável independente Região.
+```{r}
+teste_anova <- aov(NotaDiscurso ~ Regiao_Cod, data = banco)
+summary(teste_anova)
+
+
+ggplot(banco, aes(NotaDiscurso, fill= Regiao_Cod))+
+   geom_density(alpha = 0.5)
+
+```
+
+Variável dependente Nota Discurso quando associdada a variável independente Ideologia. Conforme pode ser verificado pelo teste de anova feito, há significância estatística entre as duas variáveis. 
+```{r}
+teste_anova3 <- aov(NotaDiscurso ~ Ideologia_Cod, data = banco)
+summary(teste_anova3)
+
+TukeyHSD(teste_anova3)     
+
+ggplot(banco, aes(NotaDiscurso, fill= Ideologia_Cod))+
+   geom_density(alpha = 0.5)
+
+```
+
+
+```{r}
+
+
+```
+
+• PRESSUPOSTOS DA REGRESSÃO
+  O primeiro pressuposto que devemos verificar ao fazermos uma regressão é  a linearidade. Segundo esse pressuposto, a relação entre a variável dependente e as variáveis independentes deve ser lienar. Para verificarmos basta fazer o seguinte teste:
+```{r}
+banco_regressao2
+plot(banco_regressao2, 1)
+
+```
+  Conforme pode ser verificado no gráfico, a linha vermelha não encontra-se na horizontal como deveria caso o modelo fosse adequado para satifazer o pressuposto da linearidade. 
+
+  Portanto o pressuposto da linearidade não está satisfeito, uma vez que a medida de distribuição dos dados não consegue ser explicada por uma reta. 
+  
+  O próximo pressuposto a ser verificado é o da homoscedasticidade, e diz respeito a variância do termo de erro 
+```{r}
+plot(banco_regressao2, 3)
+
+```
+
+  Normalidade de Resíduos. 
+  Nesse pressuposto é preciso se atentar para os pontos próximos da linha diagonal. É possóvel verificar aque apenas aproximadamente metade dos dados estão próximos da linha diagonal tracejada. 
+  Outra forma de verificar esse pressuposto é por meio da criação de um objeto com os resíduos padronizados e depois submeter tal objeto a funação shapiro.teste. Ao fazermos isso esperamos obter um Pvalor alto de modo que não possamos descartar a hipótese nula, qual seja: a normalidade dos resíduos. Entretanto, o Pvalor encontrado é muito baixo, 2.2e-16, de modo que não podemos descartar a hipótese nula ao mesmo tempo em que o pressuposto não está satisfeito. 
+```{r}
+plot(banco_regressao2, 2)
+
+library(MASS)
+
+sresid <- studres(banco_regressao2)
+shapiro.test(sresid)
+
+
+```
+  
+  Autocorrelação entre casos é o próximo pressuposto.
+  O resultado ideal é que as linhas verticais estejam dentro do intervalo delimitado pelas linhas
+azuis tracejadas horizontais. Podemos atestar, pelo gráfico, que três das linhas se encontram muito acima da linha tracejada azul (com exceção da primeira, que sempre será alta e estará fora desse
+intervalo.) Outras três linhas verticais passam da linha tracejada, mas passam muito pouco. 
+  Portanto, veridicamos que há, mesmo não tão grande, autocorrelação entre as variáveis. Assim, não podemos descartar por completo a hipótese nula de que não há autocorrelação entre as variáveis. 
+```{r}
+acf(banco_regressao2$residuals)
+
+
+```
+
+  O próximo pressuposto diz respeito aos outliers, que serve para verificar a influência que a regressão sobre justamente pelos outliers.
+  Caso algum ponto cruze as linhas pontilhas que podem vir a surgir nos extremos do gráfico,
+essas observações são consideradas influentes. Neste caso do gráfico vislumbrado abaixo as observações sequer chegam próximas das linhas pontilhadas, já que estas não aparecem no gráfico. Por padrão, ele exibe as 3 observações com maior influencia, mesmo que não cruzem a linha pontilhada.
+  Deste modo, o modelo não sofre com influência de outliers. 
+```{r}
+plot(banco_regressao2, which = 5)
+
+
+```
+
+
+  O próximo teste é o de multicolinearidade das variáveis independentes. 
+  O valor mínimo, quando uma variável não possui multicolinearidade, é 1. Quanto maior o valor, maior a
+multicolinearidade. Não existe um valor objetivo para definir o quão alta é a multicolinearidade. No caso das variáveis independentes dessa pesquisa, podemos verificar que os valores são todos próximos de um, de modo que podemos descartar a multicolinearidade entre as variáveis independentes do presente modelo de regressão. 
+```{r}
+library(car)
+
+vif(banco_regressao2)
+```
+
+
+
+```{r}
+
+
+```
+
+
+```{r}
+
+
+banco_regressao1 <- lm(NotaDiscurso ~ Tipo_Discurso + SistemaGoverno + Regiao + Ideologia, data = banco)
+
+
+summary(banco_regressao1)
+
+library(texreg)
+
+screenreg(banco_regressao1)
+
+banco_regressao2 <- lm(NotaDiscurso ~ Tipo_Discurso + SistemaGoverno + Regiao_Cod + Ideologia_Cod, data = banco)
+
+summary(banco_regressao2)
+
+screenreg(banco_regressao2)
+
+confint(banco_regressao2)
+
+plot_model(banco_regressao2)
+
+```
+
+## Including Plots
+• REGRESSÃO LINEAR: o que é e para que serve
+  É um modelo estatístico utilizado para verificar a influência de uma variável independente X em uma variável dependente Y. Poderemos verificar se o aumento ou diminuição da variável independente, em unidades, promove uma variação para cima ou para baixo na variável dependente. No caso na presente pesquisa, se a presença de determiandos tipos de discursos irmão aumentar ou diminuir a nota de populismo do discurso porferido pelo líder. 
+  A regressão liner da presente pesquisa é múltipla, pois conta mais variáveis independetes que precisam ser controladas pois podem estar exercendo forte influência no resultado Y. 
+
+1. P-vlores:  o Pvalor da regressão possui alta significância estatística, < 2.2e-16, dando confiança em rejeitar a hipótese nula de que este coeficiente é igual a zero. 
+
+2. Coeficientes e Importância da variáveis: 
+   
+   INTERCEPT: 
+   O valor do intercepto diz respeito ao valor médio esperado quando as variáveis independentes são 0. Ou   seja, caso O tipo de discurso, o sistema de governo, a região e a ideologia forem 0, o valor médio  da média do discurso populista é de 0.41 com alta significância estatística ( 6.45e-07 ***).
+   
+   TIPO DE DISCURSO:
+   
+   Essa é a variável independente principal e é dividade em quatro categorias: discurso de campanha, discurso famoso, discurso internacional e ribboncutting. A categoria de referência é o discurso de campanha. Logo, os resultados das demais categorias são em relação ao discurso de campanha.
+   
+   A categoria discurso famoso possui o beta de -0.19. Logo, quando se tratar da categoria discurso famoso há uma diminuição em 0.19 na média do discurso populista em relação a discurso de camapanha. O Pvalor é de  0.00013 ***, portanto possui alta significância estatística.
+   
+   A categoria discurso internacional o beta de -0.45. Logo, quando se tratar da catergoria discurso internacional, há uma diminuição em 0.45 na média do discurso populista em realçao ao discurso de campanha. O Pvalor é de < 2e-16 ***, portanto possui alta significância estatística. 
+   
+   A categoria ribboncutting possui bota de -0.41. Logo, quando se tratar da categoria discurso ribboncutting, há uma dominuição em 0.41 na média do discurso em relação ao discurso de campanha. O Pvalor é de 1.18e-14 ***, portanto possui alta significância estatística.
+   
+   SISTEMA DE GOVERNO:
+   Essa variável independente é dividida em duas categorias: presidencialismo ou não presidencialismo. A categoria de referência é presidencialismo. Logo, o resultado deve ser interpretado em relação a essa categoria. No caso, o beta de sistema de governo foi de 0.19. Logo, quando o sistema for presidencialista, há um aumento de 0.19 na média do discurso populista em comparação a sistemas não presidencialistas. O Pvalor é de 5.82e-05 ***, portanto possui alta significância estatística.
+   
+   REEGIÃO:
+   
+   Essa variável independente e é dividade em sete categorias: América Latina e Caribe, Eurpa e Ásia Central, Oriente Médio e Norte da África, América do Norte, Sul da Ásia, África Subsaariana, Leste da Ásia e Pacífico. A categoria de referência é América Latina e Caribe, portanto os resultados das demais categorias são em relação a América Latina e Caribe. 
+   
+   A cateogria Oriente Médio e Norte da África possui bete de 0.76. Poranto, a média do discurso populista aumenta em 0.76 nessa região quando comparado à América Latina e Caribe. Possui Pvalor de 0.00309 **, logo tem alta significância estatística. 
+   
+    A cateogria África Subsaariana possui beta de -0.30. Poranto, a média do discurso populista diminui em 0.30 nessa região quando comparado à América Latina e Caribe. Possui Pvalor de 0.09272 ., logo tem significância estatística.
+ 
+ As demais categorias não possuem significância estatística. 
+ 
+    IDEOGIA:
+
+  Essa variável independente é dividida em trÊs categorias: Centro, Esquerda e Direita. A categoria de referência é o centro. Logo, o resultado deve ser interpretado em relação a essa categoria.
+  
+  Na categoria Direita, o beta é de 0.06. Ou seja, a média do discurso populista aumenta em 0.06 quando o político à frente do poder executivo é de direita, em relação aos incumentes de centro. Entretanto, tal categoria não possui significância estatística. 
+  
+  Já na categoria Esquerdda, o beta é de 0.11. Portanto, a média do discurso populista aumenta em 0.11 quando o político à frente do poder executivo é de esquerda, em comparação aos incubentes de centro. Essa categoria possui Pvalor de 0.02042 *, logo, conta com alta significância estatística. 
+
+3. Intervalo de Confiança 
+  
+  O intercepto, estão dentro do intervalo de confiança que é 2,5% para mais e para menos.
+  
+4. Erro padrão
+  
+  O erro pardão de 0.507, isso quer dizer que em média o modelo erra, em uma escala de 0 a 10, em média, 0,507. Um valor baixo. 
+ 
+5. R quadrado
+ 
+  O R quadrado é de 0.148, portanto temos que esse modelo de regressão explica 14% da vairação variável dependente Nota do Discurso. 
+  
+```{r pressure, echo=FALSE}
+
+
+regressao_interacao <- lm(NotaDiscurso ~ Tipo_Discurso + SistemaGoverno + Regiao_Cod + Ideologia_Cod +
+                            Regiao * Ideologia_Cod, data = banco)
+
+summary(regressao_interacao)
+
+
+plot_model(regressao_interacao, type = "pred",
+            terms = c ("Regiao", "Ideologia_Cod"),
+            banco = banco)
+
+
+
+```
+7. Interação
+  Eu sua obra de 2017, os autores Cas Muude e Kaltwasser, escrevem que o populimso é um fenômeno presente em todas as regiões, da América do Norte à Ásia. Entretanto, uma vez que o populismo é uma ideologia que vai de encontro ao liberalismo e, consequentemente, ao pluralismo, foi bastante marginalizado pelos políticos europeus no logo após o fim da Segunda Guerra Mundial (MUDDE, 2019). Já o mesmo não aconteceu na América Latina, de maneira que vários populistas chegaram à presidência ao longo do século XX e começo do século XXI, como Juan Perón na Argentina, Hugo Chávez na Venezuela e Rafael Correia mais recentemente no Equador. 
+  O que divide os líderes populistas de cada região é a ideologia: esquerda, direita ou centro. Na América Latina os populistas bebem muito de um discurso associado ao socialismo, tornando o populismo nessa região mais associado à esquerda (Jair Bolsonaro, no Brasil, é uma exceção, uma vez que trata-se de um exemplo óbvio de um populista de direita) (MUDDE e KALTWASSER, 2017). Já no contiente europeu, os líderes populistas costuam fazer uso de uma retórica nacionalista conservadora, estando mais associados à direita (idem).
+  Portanto, decidimos testar a intereção entre as variáveis independentes Região e Ideologia. Ao rodarmos a interação verificamos que não há significância estatística entre ideologia e região. 
+  Tal resultado é mostra que apesar de qualquer estigma ao qual as regiões estejam associados em termos de ideologia populista, tanto o populismo de direita quanto o de esquerda podem florescer nas mais diversas sociedades. Da mesma forma que Jair Bolsonaro é um exemplo na América Latina  de um populista de direita, o PODEMOS, na Espanha e o SYRIZA, na Grécia exemplos concretos do populismo de esquerda no continente europeu.
+  
+  Podemos verificar, ainda, pelo gráfico da intereção, que, com exceção da América Latina e Caribe, os intervalos de confiança estão sobrepostos, confirmando a ausência de significância estatística entre ideologia e regiã. Na América Latina e Caribe os intervalos de confiança das ideologias centro e direita estão sobrepostos, não havendo significância estatística; entretanto, ainda nessa região é possível verificar, por meio do gráfico, que a ideologia esquerda não tem seu intervalo de confiança sobreposto a nenhuma ideologia, estando acima da sobreposição das ideologias de centro e de direita, figurando em torno de 0.6 e com intervalo de confiança variando entre 0.4 e 0.9. Assim, vericamos que há significância estatística na associação em América Latina e Caribe a um populismo de esquerda moderado. 
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+• COMO A SUA PESQUISA DÁ UM PASSO A MAS PARA O DESENVOLVIMENTO TEÓRICO?  
+
+	O projeto de pesquisa desenvolvido nesta disciplina se propõe a analisar, a influência do tipo de discurso realizado (em campanha, famoso, internacional e para a base de aliados) pelo líder (presidente ou primeiro ministro) na nota de populismo nos discursos. Após a análise dos dados, foi possível perceber que o discurso realizado durante a campanha eleitoral tem maior influência na nota de populismo no discurso, sendo o tipo de discurso com maior teor de características populistas quando comparado aos outros três. 
+	Além disso, também foi constatado que o sistema presidencialista é mais suscetível a líderes que apresentam um maior discurso com teor populista, dando suporte a teoria de que no sistema presidencialista, por ter um grande foco na figura do líder, é mais propenso à ascensão de políticos populistas, uma vez que em outros sistemas há um foco maior ou igual nos partidos políticos (MÜLLER, 2017).
+	 No que tange a questão ideológica, a pesquisa apresenta um avanço ao demonstrar que a presença de discursos com altas notas de populismo tendem a ser maiores entre líderes com ideologia à esquerda quando comparados ao centro. Entretanto, a significância estatística não é tão grande. 
+	 
+   É importante relembrar ao leitor que o foco da presente pesquisa está no nas diversas categorias de discursos proferidos pelos líderes das nações, não no comportamento e políticas implementadas. Portanto, ao encontrarmos que os discursos de campanha sejam mais populistas do que discursos famosos, internacionais ou feitos para a base de aliados, isso não significa que após eleito o presidente ou primeiro ministro deixa de ser populista. Tal afirmação pode significar que após instalado no gabinete do Executivo, o líder não encontra mais necessidade de adotar discursos populistas tão fortes e frequentes, mas sim de implementar suas promessas de campanha, Viktor Órban é um excelente exemplo de que após eleito é plenamente possível agir como populista, uma vez que o primeiro ministro da Hungria modificou a Suprema Corte húngara, indicando juízes aliados de Órban, e aprovou uma nova constituição, em 2011, que remodelou todo o sistema político de modo a favorecer o Fidesz sob o pretexto populista de estar criando uma Hungria para os verdadeiros húngaros  (MUDDE e KALTWASSER, 2017; MÜLLER, 2017). 
+Portanto, não é que após aleito o líder será menos populista, mas apenas que seu foco será maior nas ações do que no discurso. 
+   Futuras pesquisas podem se debruçar apenas sobre as atitudes tomadas por populistas no gabinete, em contraste com o discurso de campanha, de modo a verificar se o populismo diminui ou não após o líder finalmente chegar à frente do Poder Executivo. 
+
+• AVALIAÇAÇO DOS 4 HURDLES
+
+  Em relação ao primeiro hurdle existe um mecanismo causal que conecta a variável independente à variável dependente, pois o tipo de discurso feito pelo líder populista influencia nota de populismo que tal discurso terá. Por exemplo, se um político é populista ele espera ganhar chegar ao poder propagando a sua ideologia para o eleitorado que necessita conquistar, desse modo coerente pensar supor que discursos proferidos em palanques eleitorais durante a campanha venham a ter uma alta avaliação na nota de populismo. O mesmo podemos dizer para discursos voltados aos apoiadores, tendo em vista que tendem a partilhar os mesmos desejos. Por sua vez, discursos internacionais é lógico pensar que tendem a ser menos populistas, uma vez estará sujeito ao escrutínio de autoridades importantes e, ou, parceiros comerciais que podem não se interessar ou partilhar das mesmas convicções. Já discursos famosos, uma vez, é coerente pensar que serão populistas tendo em vista que são de grande circulação e representam as características de mais destaque do líder. 
+  O segundo hurdle diz respeito ao cenário de descartarmos a possibilidade da variável dependente causar a variável dependente, ou seja: a nota do discurso populista causar o tipo de discurso. Esse obstáculo está superado uma vez que as quatro categorias de discurso que representam a variável independente (proferido em campanha, para a base de aliados, internacional e famoso) não são causados pela nota de populismo que possam vir a ter, mas pelo cargo que almejam ocupar (no caso dos discursos de campanha) ou que ocupam (base de aliados, internacional, famoso). Portanto, de acordo com esse exercício lógico, resta claro que o cenário de causalidade reversa resta rejeitado.
+  O terceiro hurdle a ser analisado diz respeito a covariação, ou correlação, entre a variável dependente Y e a variável independente X. Trocando em miúdos: a maior presença de X está associada ao aumento ou diminuição de Y. Esse obstáculo, da mesma forma como os dois descritos acima, também se encontra superado uma vez que o discurso, o que é dito, consiste em uma das formas de identificar um líder político populista (da mesma forma que o seu comportamento após empossado no cargo), é através de suas falas, proferidas em campanha  ou em qualquer outra situação. Deste modo, o tipo de discurso pode tanto aumentar como diminuir a nota de populismo em discursos políticos. Assim, está superado o terceiro obstáculo. 
+  Por fim, o quarto hurdle concerne às demais variáveis que também podem ter associação com a variável dependente Y, sendo igualmente uma das causas, de modo a tornar a relação entre Y e X espúria. Portanto, é necessário controlar as demais variáveis que possam está causando Y. Fazemos isso no presente trabalho ao trazermos as variáveis independentes secundárias à regressão, qual sejam: sistema de governo, região e ideologia. Dessa maneira o quarto obstáculo encontra-se superado. 
+  
+• REFERÊNCIAS
+
+BERMAN, Sheri. The Causes of Populism in the West. Annual Review of Political Science, v. 24, p. 71-88, 2021.
+
+GURIEV, Sergei; PAPAIOANNOU, Elias. The political economy of populism. Available at SSRN 3542052, 2020.
+
+MUDDE, Cas; KALTWASSER, Cristóbal Rovira. Populism: A very short introduction. Oxford University Press, 2017.
+
+MÜLLER, Jan-Werner. What is populism?. University of Pennsylvania Press, 2016.
+
+PRZEWORSKI, Adam. Crises of democracy. Cambridge University Press, 2019.
+
+
+  
+<div/>  
